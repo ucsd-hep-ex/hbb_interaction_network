@@ -1,0 +1,7 @@
+src.models.vicreg \(module\)
+============================
+
+.. automodule:: src.models.vicreg
+   :members:
+   :undoc-members:
+   :show-inheritance:
