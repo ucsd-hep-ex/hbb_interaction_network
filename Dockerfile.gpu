@@ -20,7 +20,9 @@ ENV LD_LIBRARY_PATH /opt/xrootd/lib
 
 USER $NB_USER
 RUN mamba install xrootd
+USER root
 RUN mamba install -c pyg pyg pytorch-cluster pytorch-scatter pytorch-sparse pytorch-spline-conv
+USER $NB_USER
 ENV TORCH=1.13.1
 ENV CUDA=cu117
 RUN pip install pyg-lib -f https://data.pyg.org/whl/nightly/torch-${TORCH}+${CUDA}.html
