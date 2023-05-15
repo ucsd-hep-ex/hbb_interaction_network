@@ -20,7 +20,10 @@ ENV LD_LIBRARY_PATH /opt/xrootd/lib
 
 USER $NB_USER
 RUN mamba install xrootd
-RUN mamba install -c pyg pyg
+RUN mamba install -c pyg pyg pytorch-cluster pytorch-scatter pytorch-sparse pytorch-spline-conv
+ENV TORCH=1.13.1
+ENV CUDA=cu117
+RUN pip install pyg-lib -f https://data.pyg.org/whl/nightly/torch-${TORCH}+${CUDA}.html
 COPY requirements_gpu.txt .
 RUN pip install -r requirements_gpu.txt
 
