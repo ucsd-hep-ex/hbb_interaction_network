@@ -222,8 +222,11 @@ def main(args, evaluating_test=True):  # noqa: C901
                 if j != 1:
                     # Don't save the model, just add to the arrays.
                     feature_arrays = [np.concatenate((feature_arrays[i], sub_X[i]), axis=0) for i in range(n_feature_sets)]
+                    print(f"feature_array shape: {sub_X[0].shape}")
                     target_array = np.concatenate((target_array, out_test), axis=0)
+                    print(f"target_array shape: {out_test.shape}")
                     spec_array = np.concatenate((spec_array, spectator), axis=0)
+                    print(f"target shape: {target.shape}")
                     print(f"j = {j}, added {len(target)} events to the arrays")
  
         
