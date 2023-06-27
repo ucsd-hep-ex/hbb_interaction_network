@@ -12,7 +12,7 @@ import h5py
 
 if torch.cuda.is_available():
     print("cuda is available")
-#     import setGPU  # noqa: F401
+    import setGPU  # noqa: F401
 
 import tqdm
 import yaml
