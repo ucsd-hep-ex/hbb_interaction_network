@@ -11,8 +11,8 @@ import torch
 import h5py
 
 if torch.cuda.is_available():
-    print("cuda is available")
     print(f"current device: {torch.cuda.current_device()}")
+    print("cuda is available")
     # import setGPU  # noqa: F401
 
 import tqdm
