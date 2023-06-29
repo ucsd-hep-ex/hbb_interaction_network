@@ -25,6 +25,7 @@ RUN pip install -r requirements_gpu.txt
 ENV TORCH=1.13.1
 ENV CUDA=cu117
 RUN pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-${TORCH}+${CUDA}.html
+RUN pip install torch_geometric
 
 USER root
 RUN fix-permissions "${CONDA_DIR}" && \
