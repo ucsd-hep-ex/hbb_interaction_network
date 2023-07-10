@@ -6,6 +6,7 @@ cernopendata-client[pycurl,xrootd]
 # external requirements
 click
 coverage
+fastjet
 flake8
 # local package
 # git+https://github.com/fair4hep/hbb_interaction_network@main
@@ -28,4 +29,5 @@ toposort>=1.5.0
 # torchvision
 tqdm
 uproot
+vector
 xrootd
