@@ -12,7 +12,8 @@ import torch.nn as nn
 import torch.optim as optim
 
 if torch.cuda.is_available():
-    import setGPU  # noqa: F401
+    # import setGPU  # noqa: F401
+    print(f"current device: {torch.cuda.current_device()}")
 
 import tqdm
 import yaml
