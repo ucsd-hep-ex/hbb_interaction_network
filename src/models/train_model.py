@@ -296,7 +296,8 @@ def main(args):  # noqa: C901
                 np.array(loss_val),
             )
 
-        acc_val = accuracy_score(val_targetv[:, 0], predicted[:, 0] > 0.5)
+        # added np.round() to allow for training with predicted labels
+        acc_val = accuracy_score(np.round(val_targetv[:, 0]), predicted[:, 0] > 0.5)  
         print(f"Validation Accuracy: {acc_val}")
     # save all losses
     np.save(
