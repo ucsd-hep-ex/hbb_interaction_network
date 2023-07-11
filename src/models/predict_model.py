@@ -166,7 +166,7 @@ def main(args, evaluating_test=True):  # noqa: C901
         out_test = out_test.cpu().data.numpy()
         out_test = softmax(out_test, axis=1)
         if args.argmax:
-            out_test = np.argmax(out_test, axis=1)
+            out_test = np.round(out_test)
 
         if j == 1:
             # initialize the arrays
