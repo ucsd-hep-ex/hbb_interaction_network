@@ -40,6 +40,17 @@ labels = defn["labels"]
 n_feature_sets = defn["n_feature_sets"]
 
 def main(args, evaluating_test=True):  # noqa: C901
+    # define the global base device
+    world_size = torch.cuda.device_count()
+    if world_size:
+        device = torch.device("cuda:0")
+        for i in range(world_size):
+            print(f"Device {i}: {torch.cuda.get_device_name(i)}")
+    else:
+        device = "cpu"
+        print("Device: CPU")
+    args.device = device
+
     logger = logging.getLogger(__name__)
 
     device = args.device
@@ -415,6 +426,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--shared",
         action="store_true",
+        default=False,
         help="share parameters of backbone",
     )
     parser.add_argument(
