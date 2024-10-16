@@ -19,7 +19,7 @@ ENV PATH /opt/xrootd/bin:${PATH}
 ENV LD_LIBRARY_PATH /opt/xrootd/lib
 
 USER $NB_USER
-RUN mamba install xrootd
+RUN mamba install xrootd cupy
 COPY requirements_gpu.txt .
 RUN pip install -r requirements_gpu.txt
 ENV TORCH=2.0.0
